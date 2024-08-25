@@ -2,7 +2,7 @@
 import { SiBitcoinsv } from "react-icons/si";
 import { FaEthereum } from "react-icons/fa";
 import { SiZcash } from "react-icons/si";
-import { Card, Progress } from "antd";
+import { Card, Progress, Select } from "antd";
 import { FcServices } from "react-icons/fc";
 import { FcBusinessman } from "react-icons/fc";
 import { BiCycling } from "react-icons/bi";
@@ -13,10 +13,18 @@ import { PiHandWithdrawFill } from "react-icons/pi";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { FaUserTie } from "react-icons/fa6";
 import Marquee from "react-fast-marquee";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import MemberCard from "@/app/components/(dashboard)/home/membarcard";
+const RevenueChart = dynamic(() => import('@/app/components/(dashboard)/home/chart'), {
+  ssr: false
+});
 
 const page = () => {
+  const [selectedYear, setSelectedYear] = useState("this");
+
   return (
-    <div >
+    <div  className="dashboard_Scroll">
         {/* list of title coin */}
         <Marquee className=" p-[10px] flex  xl:justify-between  bg-white text-[#898989]">
           <div className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
@@ -104,8 +112,44 @@ const page = () => {
                  </div>
           </Card>
         </div>
-        <div className="mt-[20px] grid lg:grid-cols-3 gap-[20px]">
-       
+        <div className="mt-[20px] grid lg:grid-cols-3 gap-[20px] ">
+        
+        <Card className="lg:col-span-2 col-span-1">
+        <div className="flex flex-wrap gap-2 justify-between mb-[20px]">
+        <h2 className="!text-[24px] !font-medium text-[#898989]">Revenue Chart</h2>
+        <Select
+        className="!font-medium text-[#898989]"
+        options={[
+          { value: "this", label:"This Year" },
+          { value: "pre", label:"Previous Year" }
+        ]}
+        value={selectedYear}
+        onChange={(e) => setSelectedYear(e)}
+       />
+        </div>        
+        <RevenueChart/>
+        </Card>
+        <Card className="col-span-1 text-[#898989]">
+          <div className="flex justify-between ">
+          <h1 className="text-xl text-[#898989] font-semibold  sticky top-0 bg-white pb-4">
+            Active Member
+          </h1>
+          <span className="underline cursor-pointer">View All</span>
+          </div>
+           <div className=" flex flex-col gap-2 overflow-y-scroll h-[290px]">
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+            <MemberCard name="Mahid Ahamed" role="Project Manager" />
+          </div>
+        </Card>
         </div>
       </div>
   );
