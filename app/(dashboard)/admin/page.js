@@ -12,52 +12,52 @@ import { FaWallet } from "react-icons/fa";
 import { PiHandWithdrawFill } from "react-icons/pi";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { FaUserTie } from "react-icons/fa6";
+import Marquee from "react-fast-marquee";
 
 const page = () => {
   return (
-    <div className="bg-[#f0f0f8]">
-      <div className="container p-[20px] bg-[#f0f0f8]">
+    <div >
         {/* list of title coin */}
-        <ul className="list-none p-[10px] flex flex-wrap xl:justify-between  bg-white text-[#898989]">
-          <li className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
+        <Marquee className=" p-[10px] flex  xl:justify-between  bg-white text-[#898989]">
+          <div className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
             <FcBusinessman />
             <span>Total Service Provider</span>
             <span>50</span>
-          </li>
-          <li className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
+          </div>
+          <div className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
             <BiCycling/>
             <span>Total Delivery Man</span>
             <span>34</span>
-          </li>
-          <li className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
+          </div>
+          <div className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
             <FcManager />
             <span>Total Employee</span>
             <span>50</span>
-          </li>
-          <li className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
+          </div>
+          <div className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
             <FcServices className="text-[#70c481]" />
             <span>Total Service</span>
             <span>100</span>
-          </li>
-          <li className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
+          </div>
+          <div className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
             <FaUser className="text-[#6371de]" />
             <span>Total User</span>
             <span>1000</span>
-          </li>
-          <li className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
+          </div>
+          <div className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
             <FaWallet className="text-[#fd7c28]" />
             <span>Wallet</span>
             <span>$1190.05</span>
-          </li>
-          <li className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
+          </div>
+          <div className="flex gap-2 items-center !text-sm my-[10px] px-[10px] border-r border-r-[#898989] ">
             <PiHandWithdrawFill className="text-[#4e8de7]" />
             <span>Withdraw</span>
             <span>$690.05</span>
-          </li>
+          </div>
         
-        </ul>
+        </Marquee>
         {/* card */}
-        <div className="grid xl:grid-cols-4 grid-cols-2 gap-[24px] mt-[20px]">
+        <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-[24px] mt-[20px]">
           <Card className="bg-orange-300 ">
             <div className="flex flex-wrap justify-between gap-[20px] items-center  text-white">
                   <div>
@@ -108,7 +108,6 @@ const page = () => {
        
         </div>
       </div>
-    </div>
   );
 };
 
