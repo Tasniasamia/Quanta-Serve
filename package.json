@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@metismenu/react": "^0.0.3",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "^5.16.7",
     "antd": "^5.20.2",
     "next": "14.2.5",
     "react": "^18",

@@ -7,8 +7,19 @@ import { MdOutlineDashboard } from "react-icons/md";
 const Header = () => {
   const user = true;
   const [toggle, setToggle] = useState(false);
+  const handledrawer = () => {
+    const sidebar = document.querySelector('.sidebar-header');
+    const currentWidth = sidebar.style.width;
+  
+    if (window.innerWidth >= 768) { // For medium and large screens
+      sidebar.style.width = currentWidth === '270px' ? '50px' : '270px';
+    } else { // For small screens
+      sidebar.style.width = currentWidth === '270px' ? '0px' : '270px';
+    }
+  };
+  
   return (
-    <div className="bg-[#fbfbfb] header px-5 py-3">
+    <div className="bg-[#fbfbfb] w-full px-5 py-3 ">
       <div
         className="w-full  rounded-[10px]  relative z-30 "
         style={{ filter: "drop-shadow(0px 4px 25px -1px rgba(0, 0, 0, 0.2))" }}
@@ -32,7 +43,7 @@ const Header = () => {
                 Login
               </span>
             )}
-            <div className="w-[42px] h-[42px] bg-primary cursor-pointer rounded-full flex justify-center items-center">
+            <div className="w-[42px] h-[42px] bg-primary cursor-pointer rounded-full flex justify-center items-center"onClick={handledrawer}>
             <MdOutlineDashboard className="text-white "role="button" onClick={() => {
             document.querySelector('.dashboard')?.classList.toggle(window.innerWidth > 1024 ? 'mini' : 'mobile')
           }} />
